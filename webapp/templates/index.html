@@ -1,0 +1,36 @@
+<!-- prettier ignore -->
+{% extends 'base.html' %}
+<!-- prettier ignore -->
+{% block title %} Smart Door Controller {% endblock %}
+
+<!-- prettier ignore -->
+{% block content %}
+
+<script type=text/javascript>
+  $(function() {
+    $('button').on('click', function(e) {
+      $.getJSON('/button_press/' + $(this).text(), function(data) {});
+      return false;
+    });
+  });
+</script>
+
+<h1>Smart Door Controller</h1>
+
+<div class="d-grid gap-2 mx-auto col-12">
+  <div class="position-relative">
+    <img src="{{ url_for('.video') }}" id="live-preview" />
+    <div class="position-absolute bottom-0 end-0 mx-1 live-text">LIVE</div>
+  </div>
+  <a
+    class="btn btn-secondary btn-lg"
+    href="{{ url_for('.download_image') }}"
+    download="doorbell.jpg"
+  >
+    Download Picture
+  </a>
+  <button type="button" class="btn btn-secondary btn-lg">Open Door</button>
+  <button type="button" class="btn btn-secondary btn-lg">Open Box</button>
+</div>
+
+{% endblock %}

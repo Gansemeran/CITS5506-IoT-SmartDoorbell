@@ -1,0 +1,27 @@
+/* Variables to set consistent colors throughout the UI */
+:root {
+  --clr-primary: #0a0a0a;
+  --clr-secondary: #e7e7e7;
+  --clr-accent: #44c45a;
+}
+
+#content {
+  width: 60em;
+  max-width: 90vw;
+  margin: 30px auto;
+  color: var(--clr-primary);
+  background-color: var(--clr-secondary);
+  padding: 30px 30px;
+  border-radius: 20px;
+}
+
+#live-preview {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.live-text {
+  font-weight: bold;
+  color: #a00f0f;
+  font-size: large;
+}
